@@ -5,7 +5,7 @@ import java.util.Random;
 // Classe principale
 public class SistemaOperativo {
     // Metodo main che gestisce le eccezioni I/O
-    public static void main(String[] args) throws IOException, InterruptedException{
+    public static void main(String[] args) throws IOException, InterruptedException, NullPointerException{
         // Creazione di un canale e di un buffer per l'acquisizione di una stringa
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader buffer = new BufferedReader(input);
@@ -85,64 +85,74 @@ public class SistemaOperativo {
                     if(array0[cont0].processo!=0){
                         System.out.println("Esecuzione del processo con priorità 0: #"+cont0);
                         array0[cont0].run();
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         array0[cont0].interrupt();
                         cont0++;
-                    }                
+                    }else{
+                        break;
+                    }               
                 }
             }
-        }
+        }else{}
         if(array1!=null){
             while(cont1<=ultimo1){
                 if(cont1<=ultimo1 && ultimo1>=0){
                     if(array1[cont1].processo!=0){
                         System.out.println("Esecuzione del processo con priorità 1: #"+cont1);
                         array1[cont1].run();
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         array1[cont1].interrupt();
                         cont1++;
+                    }else{
+                        break;
                     }
                 }
             }
-        }
+        }else{}
         if(array2!=null){
             while(cont2<=ultimo2){
                 if(cont2<=ultimo2 && ultimo2>=0){
                     if(array2[cont2].processo!=0){
                         System.out.println("Esecuzione del processo con priorità 2: #"+cont2);
                         array2[cont2].run();
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         array2[cont2].interrupt();
                         cont2++;
+                    }else{
+                        break;
                     }
                 }
             }
-        }
+        }else{}
         if(array3!=null){
             while(cont3<=ultimo3){
                 if(cont3<=ultimo3 && ultimo3>=0){
                     if(array3[cont3].processo!=0){
                         System.out.println("Esecuzione del processo con priorità 3: #"+cont3);
                         array3[cont3].run();
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         array3[cont3].interrupt();
                         cont3++;
-                    } 
+                    }else{
+                        break;
+                    }
                 }
             }
-        }
+        }else{}
         if(array4!=null){
             while(cont4<=ultimo4){
                 if(cont4<=ultimo4 && ultimo4>=0){
                     if(array4[cont4].processo!=0){
                         System.out.println("Esecuzione del processo con priorità 4: #"+cont4);
                         array4[cont4].run();
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         array4[cont4].interrupt();
                         cont4++;
-                    } 
+                    }else{
+                        break;
+                    }
                 }
             }
-        }
+        }else{}
     }
 }
